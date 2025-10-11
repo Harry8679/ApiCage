@@ -14,11 +14,13 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         login:
-            pattern: ^/api/login_check$
+            #pattern: ^/api/login_check$
+            pattern: ^/api/auth/login$
             stateless: true
             provider: app_user_provider
             json_login:
-                check_path: /api/login_check
+                #check_path: /api/login_check
+                check_path: /api/auth/login
                 username_path: email
                 password_path: password
         api:
